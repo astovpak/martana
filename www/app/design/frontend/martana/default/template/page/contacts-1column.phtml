@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7" lang="en-US"><![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en-US"><![endif]-->
+<!--[if !(IE 7) | !(IE 8) ]><!-->
+<html lang="en-US">
+<!--<![endif]-->
+<head>
+ <?php echo $this->getChildHtml('head') ?>   
+
+</head>
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+<?php echo $this->getChildHtml('after_body_start') ?>
+<?php echo $this->getChildHtml('global_notices') ?>
+<?php echo $this->getChildHtml('header') ?>   
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="<php echo 'http://www.google.com/chromeframe/?redirect=true'; ?>">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<div class="banner clearfix" style="background-repeat: no-repeat; background-position: center top; background-image: url('<?php echo $this->getSkinUrl('images/banner.jpg'); ?>'); background-size: cover;">
+    
+</div>
+ <?php echo $this->getChildHtml('breadcrumbs') ?>
+                  
+
+
+<?php echo $this->getChildHtml('global_messages') ?>
+<div class="container contact-page">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="blog-page-single clearfix">
+                                    <article id="post-177" class="post-177 page type-page status-publish hentry  clearfix">
+                                        <div class="full-width-contents">
+                                            <div class="entry-content">
+                                                <h2><?php echo Mage::helper('contacts')->__('Contact Us') ?></h2>
+<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+magna aliquam erat volutpat. Ut wisi enim ad minim veniam</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                    <div class="col-lg-5 col-md-5 col-sm-6 ">
+                    <?php echo $this->getChildHtml('content') ?>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6  col-lg-offset-1 col-md-offset-1">
+                        <div class="contact-sidebar clearfix">
+                            <article class="address-area clearfix">
+                                <h2><span><?php echo Mage::getStoreConfig('general/store_information/name') ?></span></h2>
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6 col-sm-12 ">
+                                     <address><?php echo Mage::getStoreConfig('general/store_information/address') ?></address>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-12 ">
+                                        <?php 
+                                          $phones=explode('/',Mage::getStoreConfig('general/store_information/phone'));
+                                        ?>
+                                        <div class="clearfix">
+                                            <p style='float:left;'><strong>Телефон :</strong></p>
+                                            <div style='float:left;'>
+                                                <?php foreach ($phones as $phone): ?>
+                                                <p><?php echo $phone ?></p>
+                                                <?php endforeach;?>
+                                            </div>
+                                         </div>                            
+                                            <p><strong>Email :</strong><?php echo Mage::getStoreConfig('trans_email/ident_general/email');?></p>                                        
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="map clearfix">
+                               <h5><span><?php echo $this->__('Location in Map') ?>:</span></h5> 
+                               <div id="map-canvas">
+                                <iframe src="https://www.google.com/maps/d/embed?mid=zFTYnnSZwlYs.kkIWWdCF0Qgw" width="100%" height="200"></iframe>
+                               </div>
+                            </article>
+                                <article class="social-icon clearfix">
+                                    <h5><span>Social :</span></h5>
+                                    <ul class="clearfix">
+                                        <li class="twitter-icon"><a target="_blank" href="3"><i class="fa fa-twitter"></i></a></li>
+                                        <li class="facebook-icon"><a target="_blank" href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="google-icon"><a target="_blank" href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li class="linkedin-icon"><a target="_blank" href="#"><i class="fa fa-linkedin"></i></a></li>
+                                        <li class="instagram-icon"><a target="_blank" href="#"><i class="fa fa-instagram"></i></a></li>
+                                        <li class="youtube-icon"><a target="_blank" href="#"><i class="fa fa-youtube"></i></a></li>
+                                        <li class="skype-icon"><a target="_blank" href="#"><i class="fa fa-skype"></i></a></li>
+                                        <li class="rss-icon"><a target="_blank" href="#"><i class="fa fa-rss"></i></a></li>                                    </ul>
+                                </article>
+                        </div>
+                    </div>
+                            </div>
+        </div>
+    
+ 
+        
+ 
+
+
+    
+
+<?php echo $this->getChildHtml('footer') ?>
+<?php echo $this->getChildHtml('global_cookie_notice') ?>
+<?php echo $this->getChildHtml('before_body_end') ?>
+
+
+<a href="#top" id="scroll-top"></a>
+
+<script type='text/javascript' id='quick-js'>
+                                            
+</script>
+
+
+</body>
+</html>

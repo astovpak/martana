@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * local.xml
+ *
+ * Local layout modifications for our local theme
+ *
+ * @category    design
+ * @package     my_theme_default
+ * @copyright   Copyright (c) 2011 Magebase.
+ */
+-->
+<layout version="0.1.0">
+ <default>
+  <reference name="head">
+        <action method="addItem">
+            <type>skin_css</type>
+            <name>css/style.css</name>
+        </action>
+        <action method="addItem">
+            <type>skin_css</type>
+            <name>css/responsive.css</name>
+        </action>
+        
+        <action method="addItem">
+            <type>skin_css</type>
+            <name>css/jquery.Jcrop.min.css</name>
+        </action>
+        <action method="addItem">
+            <type>skin_js</type>
+            <name>js/jquery-1.11.1.min.js</name>
+        </action>
+        <action method="addItem">
+            <type>skin_js</type>
+            <name>js/vendor/icheck.min.js</name>
+        </action>
+        <action method="addItem">
+            <type>skin_js</type>
+            <name>js/vendor/jquery.fs.selecter.min.js</name>
+        </action>
+        <action method="addItem">
+            <type>skin_js</type>
+            <name>js/vendor/slick.min.js</name>
+        </action>
+        <action method="addItem">
+            <type>skin_js</type>
+            <name>js/script.js</name>
+        </action>
+        <action method="addItem">
+            <type>skin_js</type>
+            <name>js/vendor/jquery.mousewheel.js</name>
+        </action>
+        <action method="addItem">
+            <type>skin_js</type>
+            <name>js/vendor/jquery.jscrollpane.min.js</name>
+        </action>
+        <action method="addItem">
+            <type>skin_js</type>
+            <name>js/vendor/jquery-ui.min.js</name>
+        </action>
+        <action method="addItem">
+            <type>skin_js</type>
+            <name>js/filters.js</name>
+        </action>
+        <action method="addItem">
+            <type>skin_js</type>
+            <name>js/vendor/jquery.tooltipster.min.js</name>
+        </action>
+        <action method="addItem">
+            <type>skin_js</type>
+            <name>js/product-detail.js</name>
+        </action>
+        <action method="addItem">
+            <type>skin_js</type>
+            <name>js/my-js.js</name>
+        </action>
+    </reference>
+  <reference name="root">
+    <action method="addBodyClass"><classname>hidden</classname></action>
+    <action method="addBodyClass"><classname>second</classname></action>
+    
+</reference>  
+<reference name="header">
+       <block type="core/template" name="colorbar"   template="page/html/colorbar.phtml"/>
+       
+    </reference>
+
+ <reference name="left">
+        <action method="unsetChild"><name>left.newsletter</name></action>
+        <action method="unsetChild"><name>tags_popular</name></action>
+        <action method="unsetChild"><name>left.permanent.callout</name></action>
+        
+    </reference>
+    <reference name="content">
+        
+    </reference>
+ </default>
+ <catalog_product_view>
+     
+    <reference name="root">
+        <action method="setTemplate"><template>page/1column.phtml</template></action>
+        
+        
+    </reference>
+    
+    
+</catalog_product_view>
+<catalogsearch_result_index>
+    <reference name="root">
+    <action method="setTemplate"><template>page/1column.phtml</template></action>
+    
+</reference>
+</catalogsearch_result_index>
+
+</layout>

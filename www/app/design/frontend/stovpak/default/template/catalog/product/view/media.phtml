@@ -1,0 +1,110 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Product media data template
+ *
+ * @see Mage_Catalog_Block_Product_View_Media
+ */
+?>
+<?php
+    $_product = $this->getProduct();
+    $_helper = $this->helper('catalog/output');
+?>
+<div class="product-detail-a-img">
+    <div class="slide" style="background-image: url(<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>)"></div>
+ 
+</div>
+
+<div class="product-detail-a-bottom-panel">
+            <div class="panel-row">
+             <?php if (count($this->getGalleryImages()) > 0): ?>
+              <ul class="product-detail-a-colors">
+                <div class="product-color-thumb show-more-colors-link">
+                  <a href="#">...</a>
+                </div>
+                <?php $_counter=1 ?>
+                <?php foreach ($this->getGalleryImages() as $_image): ?>
+                  
+                 <?php if($_image->getPosition()<90): ?>           
+                <li class="product-color-thumb <?php if ($_counter==1){echo " active";}?>" style="cursor:pointer" >
+                    
+                  <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile()); ?>" width="30" height="30" alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" />
+                </li>
+                
+                <?php endif ?>
+                <?php $_counter++; ?>
+                <?php endforeach;   ?>
+                <div class="product-detail-a-more-colors">
+                  <!-- here must be <li> with more colors -->
+                </div>
+              </ul>
+            <?php endif ?>
+            <div class="product-detail-a-btns"><a class="btn" href="#">Order Memo</a><a class="btn" onclick="OpenPopup('popup-reserve-stock');">Reserve Stock</a><a class="btn" onclick="OpenPopup('popup-order-yardage');">Order Yardage</a>
+                <div class="instock-label-line">
+                  <span class="instock-label">In-Stock</span>
+                </div>
+                <ul class="b-socials">
+                  <li>
+                    <a class="fb" href="#"></a>
+                  </li>
+                  <li>
+                    <a class="twitter" href="#"></a>
+                  </li>
+                  <li>
+                    <a class="pinterest" href="#"></a>
+                  </li>
+                  <li>
+                    <a class="email" href="#"></a>
+                  </li>
+                  <li>
+                    <a class="print" href="#"></a>
+                  </li>
+                </ul>
+              </div>
+              <div  class="product-detail-a-dots">
+                <ul  class="slick-dots" style="display: block;">
+                    <?php $icount=1 ?>
+                    <?php foreach ($this->getGalleryImages() as $_image): ?>
+                     <?php if($_image->getPosition()>=90): ?>
+                  <li>
+                      <button  type="button" class="tooltipstered" title="&lt;img src=&quot;<?php echo $_image->getUrl()?>&quot; width=&quot;138&quot; height=&quot;138&quot;/&gt;"><?php echo $icount ?></button>
+                      <?php $icount++  ?>                
+                  </li>
+                  <?php endif ?>
+                 <?php                  endforeach;?>
+                  
+                </ul>
+              </div>
+             
+              
+            
+            </div>
+                
+    
+        </div>
+
+

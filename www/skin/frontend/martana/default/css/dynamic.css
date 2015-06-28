@@ -1,0 +1,81 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28.01.2015, 15:19:10
+    Author     : Andrey
+*/
+
+nav.main-menu ul > li ul li{
+border-color:#73d1e7;
+}
+
+a{
+color:#3a3c41;
+}
+
+a:hover, a:focus{
+color:#f15b5a;
+}
+
+form input[type="submit"]{
+background-color:#3a3c41;
+}
+
+form input[type="submit"]:hover, form input[type="submit"]:focus{
+background-color:#f15b5a;
+}
+
+form input[type="submit"]{
+color:#ffffff;
+}
+
+form input[type="submit"]:hover, form input[type="submit"]:focus{
+color:#ffffff;
+}
+
+.read-more{
+background-color:#67c9e0;
+}
+
+.read-more:hover, .read-more:focus{
+background-color:#f15b5a;
+}
+
+.read-more{
+color:#ffffff;
+}
+
+.read-more:hover, .read-more:focus{
+color:#ffffff;
+}
+
+#main-footer, .footer-bottom, #main-footer .widget ul, #main-footer .widget ul li{
+border-color:#4a4c52;
+}
+
+#main-footer .widget a{
+color:#b5bac6;
+}
+
+#main-footer .widget a:hover{
+color:#cbd1de;
+}
+
+#main-footer .widget a:active{
+color:#cbd1de;
+}
+
+.footer-bottom .footer-social-nav li .fa{
+color:#53565c;
+}
+
+.footer-bottom .footer-social-nav li .fa:hover{
+color:#ffffff;
+}
+
+.footer-bottom .footer-social-nav li .fa:active{
+color:#ffffff;
+}

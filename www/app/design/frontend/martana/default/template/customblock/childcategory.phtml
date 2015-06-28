@@ -1,0 +1,96 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php 
+      /*
+        This will load one record from your database table.
+        load(<module>_id) will load whatever ID number you give it.
+        */
+    /*
+    $news = Mage::getModel('<module>/<module>')->load(1);
+    echo $news->get<Module>Id();
+    echo $news->getTitle();
+    echo $news->getContent();
+    echo $news->getStatus();
+    */
+ 
+        /*
+        This block of code loads all of the records in the database table.
+        It will iterate through the collection and the first thing it will do
+        is set the Title to the current value of $i which is incremented each
+        iteration and then echo that value back out.  At the very end it will
+        save the entire collection.
+        */
+    
+   
+         
+    
+ 
+    //$collection->walk('save');   
+    
+ 
+        /*
+        This shows how to load one value, change something and save it.
+        */
+ 
+    /*
+    $object = Mage::getModel('<module>/<module>')->load(1);
+    $object->setTitle('This is a changed title');
+    $object->save();
+    */ ?>
+<div class="row ">
+<?php $counter=0 ?>
+<?php foreach ($this->getChildCategories() as $subcat):           
+  $counter+=1;?>
+
+
+    <div class="col-lg-4 col-md-4 col-sm-6 ">
+        <article class="post-110 service type-service status-publish has-post-thumbnail hentry three-col-service">
+            <figure>
+                <a href="<?php echo $subcat->getUrl()?>" title="<?php echo $subcat->getName()?>">
+                          <img width="848" height="518" src="<?php if($subcat->getImageUrl()): echo $subcat->getImageUrl(); endif ?>" class="attachment-service-gallery-thumb wp-post-image" alt="" />
+                        </a>
+            </figure>
+            <div class="contents clearfix">
+                        <h4><a href="<?php echo $subcat->getUrl()?>"><?php echo $subcat->getName()?></a></h4>
+                        <div class="entry-content">
+                            <p><?php echo $subcat->getDescription()?></p>
+                        </div>
+                        <a class="read-more" href=""><?php echo $this->__("See products") ?></a>
+            </div>
+        </article>
+    </div>
+    <?php if($counter%2==0):?>
+    <div class="visible-sm clearfix"></div>
+    <?php endif; ?>
+    <?php if($counter>1&&$counter%2!=0): ?>
+        <div class="visible-lg clearfix"></div>
+        <div class="visible-md clearfix"></div>
+    <?php     endif;?>
+    
+
+<?php endforeach;?>
+</div>

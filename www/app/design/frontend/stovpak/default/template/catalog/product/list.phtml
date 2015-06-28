@@ -1,0 +1,121 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Product list template
+ *
+ * @see Mage_Catalog_Block_Product_List
+ */
+?>
+<?php
+    $_productCollection=$this->getLoadedProductCollection();
+    $_helper = $this->helper('catalog/output');
+?>
+<?php if(!$_productCollection->count()): ?>
+<p class="note-msg"><?php echo $this->__('There are no products matching the selection.') ?></p>
+<?php else: ?>
+            <div class="catalog-header">
+             <?php echo $this->getToolbarHtml() ?>
+            </div>
+          
+            
+          <div class="catalog-main">
+              <div class="catalog-type-list clr"> 
+                  
+                   
+                    <?php foreach ($_productCollection as $_product): ?>
+                       <div class="catalog-list-item">
+                           <figure class="catalog-item">
+                               <img class="catalog-item-img" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>">
+                               <figcaption class="catalog-item-content">
+                                   <div class="catalog-item-content-inner">
+                                    <h3 class="catalog-item-name"><a class="invert" href="<?php echo $_product->getProductUrl(); ?>"><? echo $_product->getName(); ?></a></h3>   
+                                    <p class="catalog-item-info"> 
+                                        
+                                      <?php echo Mage::helper('core')->currency($_product->getPrice()) ?>/<?php echo $_product->getUnits();?><br>Available yards:<br>28.25 &nbsp;|&nbsp; 10 &nbsp;|&nbsp; 5
+                                    </p>
+                                    <div class="panel-link fav-link">
+                                                        
+                                    <a onclick="OpenPopup('popup-add-my-studio')">Add to My Studio</a>
+                                    </div>
+                                   </div>
+                                   
+                               </figcaption>
+                           </figure>
+                           <div class="catalog-list-item-content">
+                           <h2 class="catalog-list-item-title">
+                               <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
+                               <a href="<?php echo $_product->getProductUrl() ?>"><?php echo $_productNameStripped; ?></a>
+                           </h2>
+                           </div>
+                           <?php if($_product->isSaleable()): ?>
+                           <div class="instock-label">
+                            In-Stock
+                           </div>
+                           <?php else: ?>
+                            <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                           <?php endif ?>
+                           <div class="catalog-list-item-text">
+                           <p>
+                            <?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?> <a class="invert" href="<?php echo $_product->getProductUrl() ?>">learn more...</a>
+                           </p>
+                           </div>
+                            <dl class="catalog-list-item-info">
+                                <?php  $attributes = $_product->getAttributes();
+                            foreach ($attributes as $attribute) :
+                               if ($attribute->getIsVisibleOnFront()) :?>
+                            <dt><?php echo  $attribute->getFrontendLabel()?></dt>
+                            <dd><?php if ($attribute->getName()=='price'){
+                            echo Mage::helper('core')->currency($_product->getPrice());}
+                                else
+                                  echo $value = $attribute->getFrontend()->getValue($_product);?> </dd>
+                             <?php  endif;
+                            endforeach; ?>
+                      
+                            </dl>
+                    <div class="catalog-list-item-btns">
+                       <?php if($_product->isSaleable()): ?>
+                        <a class="btn" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')">Order Yardage</a>
+                        <?php else: ?>
+                        <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                      <?php endif ?>
+                      
+                    </div>
+                       </div>
+                    <?php endforeach; ?> 
+                   
+              
+              </div> 
+              <div class="catalog-footer right">
+                  <?php echo $this->getToolbarBlock()->getPagerHtml();?>
+                
+                
+                
+              </div>
+          </div>
+                  
+<?php endif; ?>

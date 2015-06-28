@@ -1,0 +1,7 @@
+app/code/local/Stovpak_Article    app/code/local/Stovpak_Article
+app/design/adminhtml/default/default/layout/stovpak_article.xml    app/design/adminhtml/default/default/layout/stovpak_article.xml
+app/design/adminhtml/default/default/template/stovpak_article    app/design/adminhtml/default/default/template/stovpak_article
+app/design/frontend/base/default/layout/stovpak_article.xml    app/design/frontend/base/default/layout/stovpak_article.xml
+app/etc/modules/Stovpak_Article.xml    app/etc/modules/Stovpak_Article.xml
+app/locale/en_US/Stovpak_Article.csv    app/locale/en_US/Stovpak_Article.csv
+skin/frontend/base/default/images/placeholder/article.jpg    skin/frontend/base/default/images/placeholder/article.jpg

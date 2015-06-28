@@ -1,0 +1,125 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28.01.2015, 13:02:07
+    Author     : Andrey
+*/
+/* = Parent Theme Custom CSS File
+-------------------------------------------------------------- */
+ .top-links{
+   display: block;
+   //float: right;
+}
+.top-links ul{
+    float: right;
+    margin: 0;
+}
+ .top-links ul li{
+    float:left;
+    position: relative;
+    margin: 0;
+    list-style: none;
+    padding-right: 5px;
+}
+.top-links ul li {
+list-style: none;
+//background-color: #dcdee4;
+display: inline-block;
+margin-left: 5px;
+margin-right: 5px;
+}
+
+.top-links ul li .fa {
+font-size: 24px;
+color: #67c9e0;
+display: block;
+text-align: center;
+line-height: 36px;
+}
+.top-links ul a{
+ color:#bbbfc9;   
+}
+.top-links ul a:hover{
+ color:#f15b5a;   
+}
+.top-links ul li rt{
+ font-size: 12px;
+ padding-right: 5px; 
+ 
+}
+.header-top{
+    padding:0;
+    display:none;//remove it to see header=top
+}
+.header-top p{
+    padding-top: 12px;
+}
+#header{
+    padding:0;
+}
+#header .container{
+    margin:0;
+}
+nav.main-menu{
+    margin-top: 25px;
+}
+.wellcome{
+    float: left;
+    margin-top: 25px;
+    width:250px;
+}
+.wellcome span{
+width: 100%;
+height:50px;
+display: block;
+padding: 10px 15px;
+text-decoration: none;
+color: #60646d;
+font-size: 20px;
+font-weight: 400;
+text-align: left;
+background-image: url("../images/24-7-2.png");
+background-position-x: 200px;
+background-repeat: no-repeat;
+}
+@media all{
+.home-slider .slide-content {
+width: 50%;
+background-color: rgba(225, 255, 255, 0.8);
+padding: 10px;
+}
+.contact-page #map-canvas {
+width: 100%;
+height: 200px;
+}
+.contact-sidebar .timetable-area, .contact-sidebar .address-area, .contact-sidebar .social-icon, .map{
+border-bottom: 1px solid #dcdee4;
+padding-bottom: 10px;
+margin-bottom: 10px;
+}
+}
+@media (min-width: 1300px) and (max-width: 1500px) {
+  .home-slider .content-wrapper h1 {
+    font-size: 42px;
+  }
+}
+.overlay{
+    color:white;
+    font-weight: bold;
+}
+.overlay-effect{
+    background-color:white;
+}
+.isotope-item .content{
+   background-color: white;
+}
+div.gallery-item-types{
+    border: none;
+    padding: 0;
+}
+.single-feature a:hover{
+    color: red;
+}

@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Stovpak_Article extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Stovpak
+ * @package        Stovpak_Article
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<widgets>
+    <article_article_view type="stovpak_article/article_widget_view" translate="name description" module="stovpak_article">
+        <name>Article view</name>
+        <description>Article view widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <article_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Article</label>
+                <type>label</type>
+                <helper_block>
+                    <type>stovpak_article/adminhtml_article_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Article</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>120</sort_order>
+            </article_id>
+        </parameters>
+    </article_article_view>
+    <article_article_link type="stovpak_article/article_widget_link" translate="name description" module="stovpak_article">
+        <name>Article link</name>
+        <description>Article link widget</description>
+        <is_email_compatible>0</is_email_compatible>
+        <parameters>
+            <article_id type="complex" translate="label">
+                <visible>1</visible>
+                <required>1</required>
+                <label>Article</label>
+                <type>label</type>
+                <helper_block>
+                    <type>stovpak_article/adminhtml_article_widget_chooser</type>
+                    <data>
+                        <button translate="open">
+                            <open>Select Article</open>
+                        </button>
+                    </data>
+                </helper_block>
+                <sort_order>130</sort_order>
+            </article_id>
+        </parameters>
+    </article_article_link>
+</widgets>
