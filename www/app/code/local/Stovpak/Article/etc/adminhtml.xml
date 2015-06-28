@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Stovpak_Article extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Stovpak
+ * @package        Stovpak_Article
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+-->
+<config>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <stovpak_article translate="title" module="stovpak_article">
+                                        <title>Article</title>
+                                    </stovpak_article>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <cms>
+                        <children>
+                            <stovpak_article translate="title" module="stovpak_article">
+                                <title>Articles</title>
+                                <children>
+                                    <article translate="title" module="stovpak_article">
+                                        <title>Article</title>
+                                        <sort_order>0</sort_order>
+                                    </article>
+                                </children>
+                            </stovpak_article>                        </children>
+                    </cms>
+
+                </children>
+            </admin>
+        </resources>
+    </acl>
+    <menu>
+        <cms>
+            <children>
+                <stovpak_article translate="title" module="stovpak_article">
+                    <title>Articles</title>
+                    <sort_order>0</sort_order>
+                    <children>
+                        <article translate="title" module="stovpak_article">
+                            <title>Article</title>
+                            <action>adminhtml/article_article</action>
+                            <sort_order>0</sort_order>
+                        </article>
+                    </children>
+                </stovpak_article>            </children>
+        </cms>
+
+    </menu>
+</config>

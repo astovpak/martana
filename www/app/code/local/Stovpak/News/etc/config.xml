@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<config>
+    <modules>
+        <Stovpak_News>
+            <version>0.0.1</version>
+        </Stovpak_News>
+    </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <dsnews>
+                    <file>stovpak_news.xml</file>
+                </dsnews>
+            </updates>
+        </layout>
+        <routers>
+            <stovpaknews>
+                <use>standard</use>
+                <args>
+                    <module>Stovpak_News</module>
+                   <frontName>news</frontName>
+                
+                </args>
+            </stovpaknews>
+        </routers>
+    </frontend>
+    <global>
+        <blocks>
+            <stovpaknews>
+                <class>Stovpak_News_Block</class>
+            </stovpaknews>
+        </blocks>
+        <models>
+            <stovpaknews>
+                 <class>Stovpak_News_Model</class>
+                <resourceModel>stovpaknews_resource</resourceModel>
+            </stovpaknews>
+            <stovpaknews_resource>
+                <class>Stovpak_News_Model_Resource</class>
+                <entities>
+                    <table_news>
+                        <table>stovpak_news_entities</table>
+                    </table_news>
+                </entities>
+            </stovpaknews_resource>
+        </models>
+        <resources>
+            <stovpaknews_setup>
+                <setup>
+                    <module>Stovpak_News</module>
+                </setup>
+            </stovpaknews_setup>
+        </resources>
+    </global>
+</config>

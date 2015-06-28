@@ -1,0 +1,92 @@
+<?php 
+/**
+ * Stovpak_Article extension
+ * 
+ * NOTICE OF LICENSE
+ * 
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ * 
+ * @category       Stovpak
+ * @package        Stovpak_Article
+ * @copyright      Copyright (c) 2015
+ * @license        http://opensource.org/licenses/mit-license.php MIT License
+ */
+/**
+ * Article list template
+ *
+ * @category    Stovpak
+ * @package     Stovpak_Article
+ * @author      Ultimate Module Creator
+ */
+?>
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<?php $_articles = $this->getArticles();?>
+<?php if($_articles->getSize()>0): ?>
+<div class="page-title article-title">
+    <?php if (Mage::helper('stovpak_article/article')->isRssEnabled()) : ?>
+        <a href="<?php echo Mage::helper('stovpak_article/article')->getRssUrl();?>" class="link-rss"><?php echo Mage::helper('stovpak_article')->__('Subscribe to RSS Feed')?></a>
+    <?php endif;?>
+    <h1><?php echo Mage::helper('stovpak_article')->__('Articles') ?></h1>
+</div>
+
+<div class="blog-page clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="blog-post-listing clearfix">
+                        <!-- Post -->
+        <?php if ($_articles->getSize() > 0) :?>
+        <?php echo $this->getPagerHtml(); ?>
+        <?php foreach ($_articles as $_article) : ?> 
+          <article id="post-<?php echo $_article->getId()?>" class="post-<?php echo $_article->getId()?> post type-post status-publish format-image has-post-thumbnail hentry category-health-basics tag-benefits tag-body tag-health clearfix" >
+            <!-- Post Date and Comments -->
+           
+
+            <!-- Post contents -->
+            <div class="full-width-contents">
+                <header class="entry-header">
+                  <?php if ($_article->getImage()) :?>
+                  
+                  <figure>
+                    <a href="<?php echo $_article->getArticleUrl()?>" title="<?php echo $_article->getTitle()?>">
+                    <img width="732" height="608" src="<?php echo Mage::helper('stovpak_article/article_image')->init($_article, 'image')->resize(735,608);?>" alt="<?php echo $this->escapeHtml($_article->getTitle());?>" />    
+                    </a>
+                  </figure>
+                  <?php endif; ?>
+                  <h3 class="entry-title"><a href="<?php echo $_article->getArticleUrl()?>" rel="bookmark"><?php echo $_article->getTitle()?></a></h3>
+                  
+                </header>
+                <div class="entry-content">
+                   <p><?php echo $_article->getAbstract()?></p>
+                </div>
+                <a class="read-more" href="<?php echo $_article->getArticleUrl()?>" rel="bookmark">Read More</a>    
+            </div>
+          </article>
+          <?php        endforeach; ?>
+          <?php echo $this->getPagerHtml(); ?>
+        <?php else : ?>
+                <?php echo Mage::helper('stovpak_article')->__('There are no articles at this moment');?>
+        <?php endif;?>
+                        <!-- Post -->
+
+          
+         
+
+
+
+<div class='pagination'><span class='page-numbers current'>1</span>
+<a class='page-numbers' href='http://inspirythemesdemo.com/medicalpress/news/page/2/'>2</a>
+<a class="next page-numbers" href="http://inspirythemesdemo.com/medicalpress/news/page/2/"> > </a>
+</div>                    
+</div>
+</div>
+        
+
+</div>
+</div>
+</div>
+<?php endif; ?>
+
