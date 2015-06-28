@@ -1,9 +1,0 @@
-2015-02-10T16:02:14+00:00 CRIT (2): Not valid template file:frontend\base\default\template\stovpak/services.phtml
-2015-04-02T08:05:39+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:52
-[1] Z:\home\martana.den\www\lib\Zend\Controller\Response\Abstract.php:768
-[2] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:84
-[3] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Varien\Front.php:184
-[4] Z:\home\martana.den\www\app\code\core\Mage\Core\Model\App.php:354
-[5] Z:\home\martana.den\www\app\Mage.php:684
-[6] Z:\home\martana.den\www\index.php:89
-</pre>
