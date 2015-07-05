@@ -30,37 +30,93 @@
  *
  * @see Mage_Catalog_Block_Category_View
  */
+
 ?>
-<?php if ($this->getCurrentCategory()->getLevel()>2):?>
 <?php
-    $_helper    = $this->helper('catalog/output');
-    $_category  = $this->getCurrentCategory();
-    $_imgHtml   = '';
-    if ($_imgUrl = $_category->getImageUrl()) {
-        $_imgHtml = '<p class="category-image"><img src="'.$_imgUrl.'" alt="'.$this->escapeHtml($_category->getName()).'" title="'.$this->escapeHtml($_category->getName()).'" /></p>';
-        $_imgHtml = $_helper->categoryAttribute($_category, $_imgHtml, 'image');
-    }
+  $_category  = $this->getCurrentCategory();
+  $children=explode(',',$_category->getChildren());
+  $_helper    = $this->helper('catalog/output');
 ?>
-<div class="page-title category-title">
-    <?php if($this->IsRssCatalogEnable() && $this->IsTopCategory()): ?>
-        <a href="<?php echo $this->getRssLink() ?>" class="link-rss"><?php echo $this->__('Subscribe to RSS Feed') ?></a>
-    <?php endif; ?>
-    <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
+<?php if ($this->getCurrentCategory()->getChildren()):?>
+
+<div class="services-page clearfix">
+    <div class="container">
+       <div class="row "> 
+        <?php $count=1;?>   
+        <?php foreach ($children as $child):?>
+          <?php
+            $_cat = Mage::getModel('catalog/category')->load($child);
+            if($_cat->getIsActive())
+               {
+                $caturl     = $_cat->getURL();
+                $catname     = $_cat->getName();
+            if($_cat->getImageUrl())
+                {
+                $catimg     = $_cat->getImageUrl();
+                }
+               }
+          ?>
+          <div class="col-lg-4 col-md-4 col-sm-6 "> 
+              <article class="three-col-service post-110 service type-service status-publish has-post-thumbnail hentry">
+                 <figure>
+                       <a href="<?php echo $caturl ?>" title="<?php echo $catname?>">
+                        <img width="848" height="518" src="<?php echo $catimg ?>" class="attachment-service-gallery-thumb wp-post-image" alt="service-3" />
+                       </a>
+                 </figure>
+                 <div class="contents clearfix">
+                        <h4><a href="<?php echo $caturl ?>"><?php echo $catname?></a></h4>
+                            <div class="entry-content">
+                              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut&hellip;</p>
+                            </div>
+                            <a class="read-more" href="<?php echo $caturl ?>">Читать далее</a>
+                 </div>
+              </article>  
+          </div>
+          <?php if($count%2==0):?><div class="visible-sm clearfix"></div><?php endif; ?>
+          <?php if($count%3==0):?><div class="visible-lg clearfix"></div><div class="visible-md clearfix"></div><?php endif; ?>
+          <?php $count++; ?>
+        <?php        endforeach; ?>  
+       </div>
+    </div>
 </div>
 
-<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 
-<?php if($_imgUrl): ?>
-    <?php echo $_imgHtml ?>
-<?php endif; ?>
+<?php else: ?>
 
-<?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
-    <div class="category-description std">
-        <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
-    </div>
-    <?php endif; ?>
-<?php endif;?>
 
+
+
+    <div class="blog-page default-page service-page clearfix">
+      <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 ">
+              <div class="blog-page-single clearfix">
+               <article id="post-110" class="clearfix post-110 service type-service status-publish has-post-thumbnail hentry">
+                 <div class="page-contents">
+                    <header class="entry-header">
+                       <div class="gallery gallery-slider clearfix">
+                         <ul class="slides">
+                          <li>
+                            <a href="<?php echo $_category->getUrl() ?>" title="<?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?>" >
+                              <img width="848" height="518" src="<?php echo $_category->getImageUrl() ?>" class="attachment-service-gallery-thumb wp-post-image" alt="service-3" />
+                            </a>
+                          </li>
+                         </ul>
+                       </div>
+                    </header>
+                   <div class="entry-content">
+                        <h3><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h3>
+                        <?php if($_description=$this->getCurrentCategory()->getDescription()): ?>
+                         <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+                        <?php   endif; ?>
+                   </div>
+                 </div>
+               </article>
+              </div>
+            </div>
+           </div>
+          </div>
+        </div>
 <?php if($this->isContentMode()): ?>
     <?php echo $this->getCmsBlockHtml() ?>
 
@@ -71,4 +127,7 @@
 <?php else: ?>
     <?php echo $this->getProductListHtml() ?>
 <?php endif; ?>
+<?php  endif; ?>
 
+            
+                
