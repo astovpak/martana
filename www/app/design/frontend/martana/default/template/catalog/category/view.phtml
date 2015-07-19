@@ -60,7 +60,7 @@
               <article class="three-col-service post-110 service type-service status-publish has-post-thumbnail hentry">
                  <figure>
                        <a href="<?php echo $caturl ?>" title="<?php echo $catname?>">
-                        <img width="848" height="518" src="<?php echo $catimg ?>" class="attachment-service-gallery-thumb wp-post-image" alt="service-3" />
+                        <img width="360px" height="247" src="<?php echo $catimg ?>" class="attachment-service-gallery-thumb wp-post-image" alt="service-3" />
                        </a>
                  </figure>
                  <div class="contents clearfix">
@@ -95,13 +95,11 @@
                  <div class="page-contents">
                     <header class="entry-header">
                        <div class="gallery gallery-slider clearfix">
-                         <ul class="slides">
-                          <li>
+                        
                             <a href="<?php echo $_category->getUrl() ?>" title="<?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?>" >
-                              <img width="848" height="518" src="<?php echo $_category->getImageUrl() ?>" class="attachment-service-gallery-thumb wp-post-image" alt="service-3" />
+                              <img width="360px" height="247px" src="<?php echo $_category->getImageUrl() ?>" class="attachment-service-gallery-thumb wp-post-image" alt="service-3" />
                             </a>
-                          </li>
-                         </ul>
+                          
                        </div>
                     </header>
                    <div class="entry-content">
@@ -117,6 +115,7 @@
            </div>
           </div>
         </div>
+
 <?php if($this->isContentMode()): ?>
     <?php echo $this->getCmsBlockHtml() ?>
 
@@ -129,5 +128,5 @@
 <?php endif; ?>
 <?php  endif; ?>
 
-            
+ <a href="#top" id="scroll-top"></a>           
                 

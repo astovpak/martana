@@ -32,7 +32,7 @@
  */
 ?>
 <?php $_menu = $this->getHtml('level-top') ?>
-<?php if($_menu): ?>
+<?php if(0/*$_menu*/): ?>
 
 <nav class="main-menu">
     <ul id="menu-main-menu" class="header-nav clearfix">
@@ -83,6 +83,17 @@
     <li class="<?php if (Mage::helper('core/url')->getCurrentUrl().'/'=== $this->getUrl('contacts')): ?>active <?php endif ?>" >
         <a href="<?php echo Mage::getBaseUrl() ?>contacts" class="level-top">
                 <span><?php echo  $this->__('Contacts') ?></span>
+            </a>
+    </li>
+    
+    <li class="<?php if (Mage::helper('core/url')->getCurrentUrl().'/'=== $this->getUrl('core/url')): ?>active <?php endif ?>" >
+        <a href="<?php echo Mage::getBaseUrl() ?>contacts" class="level-top">
+                <span><?php echo  $this->__('О Нас') ?></span>
+            </a>
+    </li>
+     <li class="<?php if (Mage::helper('core/url')->getCurrentUrl().'/'=== $this->getUrl('core/url')): ?>active <?php endif ?>" >
+        <a href="<?php echo Mage::getBaseUrl() ?>contacts" class="level-top">
+                <span><?php echo  $this->__('Уголок Покупателя') ?></span>
             </a>
     </li>
      

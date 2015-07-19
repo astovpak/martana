@@ -1,6 +1,18 @@
  <layout version="0.1.0">
     <default>
       <reference name="head">
+          <action method="addItem">
+            <type>skin_css</type>
+            <name>css/woocommerce-layout.css</name>
+        </action>
+        <action method="addItem">
+            <type>skin_css</type>
+            <name>css/woocommerce-smallscreen.css</name>
+        </action>
+        <action method="addItem">
+            <type>skin_css</type>
+            <name>css/woocommerce.css</name>
+        </action>
         <action method="addItem">
             <type>skin_css</type>
             <name>css/bootstrap.css</name>
@@ -49,6 +61,9 @@
             <type>skin_css</type>
             <name>css/dynamic.css</name>
         </action>
+        
+        
+        
        <!-- Add javasripts -->
         <action method="addItem">
             <type>skin_js</type>
@@ -118,6 +133,10 @@
             <type>skin_js</type>
             <name>js/custom.js</name>
         </action>
+        <action method="addItem">
+            <type>skin_js</type>
+            <name>js/single-product.min.js</name>
+        </action>
       </reference>
       
       <reference name="root">
@@ -127,7 +146,14 @@
             <action method="addBodyClass"><classname>page-parent</classname></action>
             <action method="addBodyClass"><classname>page-template</classname></action>
             <action method="addBodyClass"><classname>page-template-home-template-php</classname></action>
+            <action method="addBodyClass"><classname>woocommerce</classname></action>
+            <action method="addBodyClass"><classname>woocommerce-page</classname></action>
+            <action method="addBodyClass"><classname>single</classname></action>
+            <action method="addBodyClass"><classname>single-product</classname></action>
+            <action method="addBodyClass"><classname>inspiry-themes</classname></action>
+             <action method="addBodyClass"><classname>inspiry-medicalpress-theme</classname></action>
      </reference> 
+     
      <reference name="header">
         <action method="unsetChild"><name>topLinks</name></action>
         <action method="unsetChild"><name>store_language</name></action>
@@ -138,6 +164,7 @@
          <action method="unsetChild"><name>footer_links</name></action>
          <action method="unsetChild"><name>store_switcher</name></action>
      </reference>
+     
      <cms_index_index>
          <reference name="content">
             <remove name="page_content_heading"/>

@@ -7,3 +7,89 @@
 [5] Z:\home\martana.den\www\app\Mage.php:684
 [6] Z:\home\martana.den\www\index.php:89
 </pre>
+2015-07-09T18:25:42+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:52
+[1] Z:\home\martana.den\www\lib\Zend\Controller\Response\Abstract.php:768
+[2] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:84
+[3] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Varien\Front.php:184
+[4] Z:\home\martana.den\www\app\code\core\Mage\Core\Model\App.php:354
+[5] Z:\home\martana.den\www\app\Mage.php:684
+[6] Z:\home\martana.den\www\index.php:89
+</pre>
+2015-07-09T18:26:00+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:52
+[1] Z:\home\martana.den\www\lib\Zend\Controller\Response\Abstract.php:768
+[2] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:84
+[3] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Varien\Front.php:184
+[4] Z:\home\martana.den\www\app\code\core\Mage\Core\Model\App.php:354
+[5] Z:\home\martana.den\www\app\Mage.php:684
+[6] Z:\home\martana.den\www\index.php:89
+</pre>
+2015-07-09T18:26:20+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:52
+[1] Z:\home\martana.den\www\lib\Zend\Controller\Response\Abstract.php:768
+[2] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:84
+[3] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Varien\Front.php:184
+[4] Z:\home\martana.den\www\app\code\core\Mage\Core\Model\App.php:354
+[5] Z:\home\martana.den\www\app\Mage.php:684
+[6] Z:\home\martana.den\www\index.php:89
+</pre>
+2015-07-09T18:28:07+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:52
+[1] Z:\home\martana.den\www\lib\Zend\Controller\Response\Abstract.php:768
+[2] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:84
+[3] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Varien\Front.php:184
+[4] Z:\home\martana.den\www\app\code\core\Mage\Core\Model\App.php:354
+[5] Z:\home\martana.den\www\app\Mage.php:684
+[6] Z:\home\martana.den\www\index.php:89
+</pre>
+2015-07-09T18:28:25+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:52
+[1] Z:\home\martana.den\www\lib\Zend\Controller\Response\Abstract.php:768
+[2] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:84
+[3] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Varien\Front.php:184
+[4] Z:\home\martana.den\www\app\code\core\Mage\Core\Model\App.php:354
+[5] Z:\home\martana.den\www\app\Mage.php:684
+[6] Z:\home\martana.den\www\index.php:89
+</pre>
+2015-07-09T18:28:55+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:52
+[1] Z:\home\martana.den\www\lib\Zend\Controller\Response\Abstract.php:768
+[2] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:84
+[3] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Varien\Front.php:184
+[4] Z:\home\martana.den\www\app\code\core\Mage\Core\Model\App.php:354
+[5] Z:\home\martana.den\www\app\Mage.php:684
+[6] Z:\home\martana.den\www\index.php:89
+</pre>
+2015-07-09T18:29:36+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:52
+[1] Z:\home\martana.den\www\lib\Zend\Controller\Response\Abstract.php:768
+[2] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:84
+[3] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Varien\Front.php:184
+[4] Z:\home\martana.den\www\app\code\core\Mage\Core\Model\App.php:354
+[5] Z:\home\martana.den\www\app\Mage.php:684
+[6] Z:\home\martana.den\www\index.php:89
+</pre>
+2015-07-09T18:29:42+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:52
+[1] Z:\home\martana.den\www\lib\Zend\Controller\Response\Abstract.php:768
+[2] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:84
+[3] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Varien\Front.php:184
+[4] Z:\home\martana.den\www\app\code\core\Mage\Core\Model\App.php:354
+[5] Z:\home\martana.den\www\app\Mage.php:684
+[6] Z:\home\martana.den\www\index.php:89
+</pre>
+2015-07-09T18:32:18+00:00 DEBUG (7): HEADERS ALREADY SENT: <pre>[0] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:52
+[1] Z:\home\martana.den\www\lib\Zend\Controller\Response\Abstract.php:768
+[2] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Response\Http.php:84
+[3] Z:\home\martana.den\www\app\code\core\Mage\Core\Controller\Varien\Front.php:184
+[4] Z:\home\martana.den\www\app\code\core\Mage\Core\Model\App.php:354
+[5] Z:\home\martana.den\www\app\Mage.php:684
+[6] Z:\home\martana.den\www\index.php:89
+</pre>
+2015-07-19T17:24:50+00:00 ERR (3): Warning: include(Mage\Userroles\Model\Eav\Entity\Attribute\Source\Customeroptions14243562240.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory  in Z:\home\martana.den\www\lib\Varien\Autoload.php on line 94
+2015-07-19T17:24:50+00:00 ERR (3): Warning: include() [<a href='function.include'>function.include</a>]: Failed opening 'Mage\Userroles\Model\Eav\Entity\Attribute\Source\Customeroptions14243562240.php' for inclusion (include_path='Z:\home\martana.den\www\app\code\local;Z:\home\martana.den\www\app\code\community;Z:\home\martana.den\www\app\code\core;Z:\home\martana.den\www\lib;.;C:\php\pear')  in Z:\home\martana.den\www\lib\Varien\Autoload.php on line 94
+2015-07-19T17:29:19+00:00 ERR (3): Warning: include(Mage\Userroles\Model\Eav\Entity\Attribute\Source\Customeroptions14243562240.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory  in Z:\home\martana.den\www\lib\Varien\Autoload.php on line 94
+2015-07-19T17:29:19+00:00 ERR (3): Warning: include() [<a href='function.include'>function.include</a>]: Failed opening 'Mage\Userroles\Model\Eav\Entity\Attribute\Source\Customeroptions14243562240.php' for inclusion (include_path='Z:\home\martana.den\www\app\code\local;Z:\home\martana.den\www\app\code\community;Z:\home\martana.den\www\app\code\core;Z:\home\martana.den\www\lib;.;C:\php\pear')  in Z:\home\martana.den\www\lib\Varien\Autoload.php on line 94
+2015-07-19T17:30:55+00:00 ERR (3): Warning: include(Mage\Userroles\Model\Eav\Entity\Attribute\Source\Customeroptions14243562240.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory  in Z:\home\martana.den\www\lib\Varien\Autoload.php on line 94
+2015-07-19T17:30:55+00:00 ERR (3): Warning: include() [<a href='function.include'>function.include</a>]: Failed opening 'Mage\Userroles\Model\Eav\Entity\Attribute\Source\Customeroptions14243562240.php' for inclusion (include_path='Z:\home\martana.den\www\app\code\local;Z:\home\martana.den\www\app\code\community;Z:\home\martana.den\www\app\code\core;Z:\home\martana.den\www\lib;.;C:\php\pear')  in Z:\home\martana.den\www\lib\Varien\Autoload.php on line 94
+2015-07-19T17:41:07+00:00 ERR (3): Warning: include(Mage\Userroles\Model\Eav\Entity\Attribute\Source\Customeroptions14243562240.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory  in Z:\home\martana.den\www\lib\Varien\Autoload.php on line 94
+2015-07-19T17:41:07+00:00 ERR (3): Warning: include() [<a href='function.include'>function.include</a>]: Failed opening 'Mage\Userroles\Model\Eav\Entity\Attribute\Source\Customeroptions14243562240.php' for inclusion (include_path='Z:\home\martana.den\www\app\code\local;Z:\home\martana.den\www\app\code\community;Z:\home\martana.den\www\app\code\core;Z:\home\martana.den\www\lib;.;C:\php\pear')  in Z:\home\martana.den\www\lib\Varien\Autoload.php on line 94
+2015-07-19T18:15:15+00:00 ERR (3): Warning: include(Mage\Userroles\Model\Eav\Entity\Attribute\Source\Customeroptions14243562240.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory  in Z:\home\martana.den\www\lib\Varien\Autoload.php on line 94
+2015-07-19T18:15:15+00:00 ERR (3): Warning: include() [<a href='function.include'>function.include</a>]: Failed opening 'Mage\Userroles\Model\Eav\Entity\Attribute\Source\Customeroptions14243562240.php' for inclusion (include_path='Z:\home\martana.den\www\app\code\local;Z:\home\martana.den\www\app\code\community;Z:\home\martana.den\www\app\code\core;Z:\home\martana.den\www\lib;.;C:\php\pear')  in Z:\home\martana.den\www\lib\Varien\Autoload.php on line 94
+2015-07-19T18:17:58+00:00 ERR (3): Warning: include(Mage\Userroles\Model\Eav\Entity\Attribute\Source\Customeroptions14243562240.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory  in Z:\home\martana.den\www\lib\Varien\Autoload.php on line 94
+2015-07-19T18:17:58+00:00 ERR (3): Warning: include() [<a href='function.include'>function.include</a>]: Failed opening 'Mage\Userroles\Model\Eav\Entity\Attribute\Source\Customeroptions14243562240.php' for inclusion (include_path='Z:\home\martana.den\www\app\code\local;Z:\home\martana.den\www\app\code\community;Z:\home\martana.den\www\app\code\core;Z:\home\martana.den\www\lib;.;C:\php\pear')  in Z:\home\martana.den\www\lib\Varien\Autoload.php on line 94
+2015-07-19T18:23:32+00:00 ERR (3): Warning: include(Z:\home\martana.den\www\includes\src\Mage_Userroles_Model_Eav_Entity_Attribute_Source_Customeroptions14243562240.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory  in Z:\home\martana.den\www\includes\src\Varien_Autoload.php on line 94
+2015-07-19T18:23:32+00:00 ERR (3): Warning: include() [<a href='function.include'>function.include</a>]: Failed opening 'Z:\home\martana.den\www\includes\src\Mage_Userroles_Model_Eav_Entity_Attribute_Source_Customeroptions14243562240.php' for inclusion (include_path='Z:\home\martana.den\www\includes\src;.;C:\php\pear')  in Z:\home\martana.den\www\includes\src\Varien_Autoload.php on line 94

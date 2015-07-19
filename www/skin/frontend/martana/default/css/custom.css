@@ -86,6 +86,9 @@ background-position-x: 200px;
 background-repeat: no-repeat;
 }
 @media all{
+ .page-top {
+     padding:0;
+ }
 .home-slider .slide-content {
 width: 50%;
 background-color: rgba(225, 255, 255, 0.8);
@@ -103,6 +106,85 @@ margin-bottom: 10px;
 article div.contents {
     height: 247px;
 }
+.overlay-effect:hover .overlay {
+  height: 100%;
+  transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  opacity: 0.9;
+}
+.isotope-item h4{
+    min-height: 38px;
+}
+.isotope-item div.content{
+    height:150px;
+    max-height: 150px;
+    overflow: hidden;
+}
+.order-now {
+  margin: 5px;
+  padding: 12px 25px;
+  background-color: #3a3c41;
+  font-size: 14px;
+  color: #fff !important;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+.order-now:hover {
+  background-color: #f15b5a;
+  color: #fff !important;
+}
+.overlay{
+    padding-top: 20%;
+}
+div.price-div{
+    margin: 10px;
+    color:green;
+    font-weight: bold;
+}
+.hiddenprice{
+    display: none;
+}
+.notsaleable span.price{
+    color:#7b7d85 !important;
+}
+.gallery-page #sort-by {
+  margin-bottom: 60px;
+}
+#sort-by {
+  padding: 0;
+  border-bottom: 1px solid #dcdee4;
+  margin-bottom: 30px;
+}
+#sort-by li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 18px -1px 0;
+  padding-bottom: 2px;
+}
+#sort-by li a {
+  font-size: 14px;
+  font-weight: 400;
+  padding-bottom: 20px;
+  display: inline-block;
+  text-decoration: none;
+}
+#sort-by li:hover {
+  padding-bottom: 0;
+  border-bottom: 2px solid #f15b5a;
+}
+#sort-by li:hover a {
+  padding-bottom: 20px;
+}
+#sort-by li.active {
+  padding-bottom: 0;
+  border-bottom: 2px solid #f15b5a;
+}
+#sort-by li.active a {
+  padding-bottom: 20px;
+}
 }
 @media (min-width: 1300px) and (max-width: 1500px) {
   .home-slider .content-wrapper h1 {
@@ -110,8 +192,8 @@ article div.contents {
   }
 }
 .overlay{
-    color:white;
-    font-weight: bold;
+    color:black;
+    //overflow-y: auto;
 }
 .overlay-effect{
     background-color:white;
@@ -125,4 +207,86 @@ div.gallery-item-types{
 }
 .single-feature a:hover{
     color: red;
+}
+
+
+
+//shop
+nav.main-menu ul > li ul li{
+border-color:#73d1e7;
+}
+
+a{
+color:#3a3c41;
+}
+
+a:hover, a:focus{
+color:#f15b5a;
+}
+
+form input[type="submit"], .woocommerce a.added_to_cart, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit, .woocommerce #respond input[type="submit"]{
+background-color:#3a3c41;
+}
+
+form input[type="submit"]:hover, form input[type="submit"]:focus, .woocommerce a.added_to_cart:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit:hover, .woocommerce #respond input[type="submit"]:hover{
+background-color:#f15b5a;
+}
+
+form input[type="submit"], .woocommerce a.added_to_cart, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit, .woocommerce #respond input[type="submit"]{
+color:#ffffff;
+}
+
+form input[type="submit"]:hover, form input[type="submit"]:focus, .woocommerce a.added_to_cart:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit:hover, .woocommerce #respond input[type="submit"]:hover{
+color:#ffffff;
+}
+
+.read-more, .woocommerce ul.products li.product .button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
+background-color:#67c9e0;
+}
+
+.read-more:hover, .read-more:focus, .woocommerce ul.products li.product .button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
+background-color:#f15b5a;
+}
+
+.read-more, .woocommerce ul.products li.product .button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
+color:#ffffff;
+}
+
+.read-more:hover, .read-more:focus, .woocommerce ul.products li.product .button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
+color:#ffffff;
+}
+
+#main-footer, .footer-bottom, #main-footer .widget ul, #main-footer .widget ul li{
+border-color:#4a4c52;
+}
+
+#main-footer .widget a{
+color:#b5bac6;
+}
+
+#main-footer .widget a:hover{
+color:#cbd1de;
+}
+
+#main-footer .widget a:active{
+color:#cbd1de;
+}
+
+.footer-bottom .footer-social-nav li .fa{
+color:#53565c;
+}
+
+.footer-bottom .footer-social-nav li .fa:hover{
+color:#ffffff;
+}
+
+.footer-bottom .footer-social-nav li .fa:active{
+color:#ffffff;
+}
+
+@media only screen and (max-width: 530px) {
+.mean-container .mean-bar{
+background-color:#53c3dd;
+}
+
 }

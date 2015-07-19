@@ -314,20 +314,47 @@
     /*-----------------------------------------------------------------*/
     if (jQuery().isotope) {
         // cache container
-        var $container = $('#isotope-container');
-     $container=$container.isotope({ 
        
+        var $container = $('#isotope-container');
+        
+//     $container =$container.isotope({ 
+//      
+//        getSortData: {
+//              name: '.name',
+//              hiddenprice:'.hiddenprice',
+//    },
+//          
+//       itemSelector: '.isotope-item',
+//        
+//        
+//        });
+        $container.isotope({
+        itemSelector : '.isotope-item',
         getSortData: {
-              name: '.name',
-              price: '.price',},
-        itemSelector: '.isotope-item',});
-    
+      name: '.name',
+      
+      hiddenprice: function( itemElem ) {
+        var  hiddenprice = $( itemElem ).find('.hiddenprice').text();
+        return parseFloat( hiddenprice.replace( /[\(\)]/g, '') );
+      }
+    }
+      });
+      
         //sorting
         $('#sort-by a').click(function(){
         // get href attribute, minus the '#'
+        $(this).parents('li').addClass('active').siblings().removeClass('active');
         var sortName = $(this).attr('href').slice(1);
+        var sortOrder=$(this).attr('sort-order')==='true';
+        $(this).attr('sort-order',!sortOrder);
+//        $(this).children('i').removeClass($(this).children('i').attr('class'));
+//        if (sortOrder){ $(this).children('i').addClass('fa fa-sort-asc')} else { $(this).children('i').addClass('fa fa-sort-desc')}
+        
         $container.isotope({ 
-        sortBy : sortName
+            
+        sortBy : sortName,
+        sortAscending: sortOrder,
+        
         });
          return false;
         });
@@ -355,6 +382,7 @@
                 animationEngine: 'best-available'
             });
         }, 1000);
+    
     }
 
     /*-----------------------------------------------------------------*/

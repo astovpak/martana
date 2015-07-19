@@ -40,6 +40,11 @@
     <?php echo $this->getChildHtml('global_notices') ?>
     <div class="page">
         <?php echo $this->getChildHtml('header') ?>
+        <?php if(!$this->getIsHomePage()) : ?>
+         <div class="banner clearfix" style="background-repeat: no-repeat; background-position: center top; background-image: url('<?php echo $this->getSkinUrl('images/banner.jpg'); ?>'); background-size: cover;"></div>
+        <?php        endif; ?>
+        
+        
         <div class="main-container col3-layout">
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
@@ -48,9 +53,9 @@
                         <?php echo $this->getChildHtml('global_messages') ?>
                         <?php echo $this->getChildHtml('content') ?>
                     </div>
-                    <div class="col-left sidebar"><?php echo $this->getChildHtml('left') ?></div>
+                    
                 </div>
-                <div class="col-right sidebar"><?php echo $this->getChildHtml('right') ?></div>
+                
             </div>
         </div>
         <?php echo $this->getChildHtml('footer') ?>

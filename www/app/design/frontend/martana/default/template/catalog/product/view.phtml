@@ -31,140 +31,204 @@
  * @see Mage_Review_Block_Product_View
  */
 ?>
+
 <?php $_helper = $this->helper('catalog/output'); ?>
 <?php $_product = $this->getProduct(); ?>
 <script type="text/javascript">
     var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
 </script>
 <div id="messages_product_view"><?php echo $this->getMessagesBlock()->getGroupedHtml() ?></div>
-<div class="product-view">
-    <div class="product-essential">
-    <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
-        <?php echo $this->getBlockHtml('formkey') ?>
-        <div class="no-display">
-            <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
-            <input type="hidden" name="related_product" id="related-products-field" value="" />
-        </div>
 
-        <div class="product-shop">
-            <div class="product-name">
-                <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+<div class="shop-page clearfix">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="blog-page-single clearfix">
+          <div itemscope itemtype="http://schema.org/Product" id="product-304" class="post-304 product type-product status-publish has-post-thumbnail product_cat-clothing product_cat-hoodies shipping-taxable purchasable product-type-simple product-cat-clothing product-cat-hoodies instock">
+   	   <div class="images">
+             <?php echo $this->getChildHtml('media') ?>
+           </div>
+
+	<div class="summary entry-summary entry-content">
+          <h1 itemprop="name" class="product_title entry-title"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+	  <div class="woocommerce-product-rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+            <div class="star-rating" title="Rated 4.67 out of 5">
+	      <span style="width:93.4%"><strong itemprop="ratingValue" class="rating">4.67</strong> out of <span itemprop="bestRating">5</span>				based on <span itemprop="ratingCount" class="rating">3</span> customer ratings			</span>
             </div>
+	    <a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<span itemprop="reviewCount" class="count">3</span> customer reviews)</a>	</div>
+           <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+	     <p class="price"><span class="amount">
+	      <?php echo $this->getChildHtml('product_type_data') ?>
+              <?php echo $this->getTierPriceHtml() ?>
+                 </span>
+             </p>
+           </div>
+        
+	<form class="cart" method="post" enctype='multipart/form-data'>	 	
+	 	<div class="quantity"><input type="number" step="1" min="1"  name="quantity" value="1" title="Qty" class="input-text qty text" size="4" /></div>
+	 	<input type="hidden" name="add-to-cart" value="304" />
+	 	<button type="submit" class="single_add_to_cart_button button alt">Add to cart</button>
 
-            <?php if ($this->canEmailToFriend()): ?>
-                <p class="email-friend"><a href="<?php echo $this->helper('catalog/product')->getEmailToFriendUrl($_product) ?>"><?php echo $this->__('Email to a Friend') ?></a></p>
-            <?php endif; ?>
+        </form>
+        <div class="product_meta">
+ 	   <span class="posted_in">Categories: <a href="#" rel="tag">Глюкометры</a>, <a href="#" rel="tag">Диабет</a>.</span>
+	</div>
+	</div><!-- .summary -->
 
-            <?php echo $this->getReviewsSummaryHtml($_product, false, true)?>
-            <?php echo $this->getChildHtml('alert_urls') ?>
-            <?php echo $this->getChildHtml('product_type_data') ?>
-            <?php echo $this->getTierPriceHtml() ?>
-            <?php echo $this->getChildHtml('extrahint') ?>
-
-            <?php if (!$this->hasOptions()):?>
-                <div class="add-to-box">
-                    <?php if($_product->isSaleable()): ?>
-                        <?php echo $this->getChildHtml('addtocart') ?>
-                        <?php if( $this->helper('wishlist')->isAllow() || $_compareUrl=$this->helper('catalog/product_compare')->getAddUrl($_product)): ?>
-                            <span class="or"><?php echo $this->__('OR') ?></span>
-                        <?php endif; ?>
-                    <?php endif; ?>
-                    <?php echo $this->getChildHtml('addto') ?>
+	
+	<div class="woocommerce-tabs">
+	 <ul class="tabs">
+	  <li class="description_tab">
+	    <a href="#tab-description">Описание</a>
+	  </li>
+          <li class="instruction_tab">
+	    <a href="#tab-instruction">Инструкция</a>
+	  </li>
+ 	  <li class="reviews_tab">
+              <a href="#tab-reviews">Комментарии (3)</a>
+          </li>
+         </ul>
+         <div class="panel entry-content" id="tab-description">
+               <?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
+               <?php if ($alias=='description'): ?>
+               <div class="box-collateral <?php echo "box-{$alias}"?>">
+                    <?php if ($title = $this->getChildData($alias, 'title')):?>
+                    <h2><?php echo $this->escapeHtml($title); ?></h2>
+                     <?php endif;?>
+                     <?php echo $html; ?>
                 </div>
-                <?php echo $this->getChildHtml('extra_buttons') ?>
-            <?php elseif (!$_product->isSaleable()): ?>
-                <div class="add-to-box">
-                    <?php echo $this->getChildHtml('addto') ?>
+                  <?php endif; ?>
+                <?php endforeach;?>
+	 </div>
+        <div class="panel entry-content" id="tab-instruction">
+          <?php $_instruction = $this->getProduct()->getInstruction(); ?>
+          <?php if ($_instruction): ?>
+          <h2><?php echo $this->__('Instruction') ?></h2>
+           <div class="std">
+                <?php echo $this->helper('catalog/output')->productAttribute($this->getProduct(), $_instruction, 'instruction') ?>
+          </div>
+          <?php endif; ?>  
+          
+        </div>   
+            
+         <div class="panel entry-content" id="tab-reviews">
+             <div id="reviews">
+	       <div id="comments">
+		<h2>3 reviews for Patient Ninja</h2>
+                  <ol class="commentlist">
+		    <li itemprop="review" itemscope itemtype="http://schema.org/Review" class="comment even thread-even depth-1" id="li-comment-6521">
+	              <div id="comment-6521" class="comment_container">
+                          <img alt='' src='http://2.gravatar.com/avatar/babdd787a9577a0e615246ac79cf2826?s=60&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/babdd787a9577a0e615246ac79cf2826?s=120&amp;d=mm&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />
+		          <div class="comment-text">
+                            <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating" class="star-rating" title="Rated 4 out of 5">
+				<span style="width:80%"><strong itemprop="ratingValue">4</strong> out of 5</span>
+			    </div>
+                            <p class="meta">
+			      <strong itemprop="author">James Koster</strong> &ndash; <time itemprop="datePublished" datetime="2013-06-07T11:46:52+00:00">June 7, 2013</time>:
+			    </p>
+                            <div itemprop="description" class="description">
+                                <p>Perfect when you&#8217;re sat at your computer, waiting for the next batch of Woo Goodies to be released. The Patient Ninja is Patient.</p>
+                            </div>
+		           </div>
+	              </div>
+                    </li><!-- #comment-## -->
+
+		  </ol>
+               </div>
+               <div id="review_form_wrapper">
+		<div id="review_form">
+                  <div id="respond" class="comment-respond">
+		     <h3 id="reply-title" class="comment-reply-title">Add a review <small><a rel="nofollow" id="cancel-comment-reply-link" href="/medicalpress/product/patient-ninja/#respond" style="display:none;">Cancel reply</a></small></h3>
+		     <form action="http://inspirythemesdemo.com/medicalpress/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+                       <p class="comment-form-author">
+                           <label for="author">Name <span class="required">*</span></label> 
+                           <input id="author" name="author" type="text" value="" size="30" aria-required="true" />
+                       </p>
+                       <p class="comment-form-email">
+                           <label for="email">Email <span class="required">*</span></label> 
+                           <input id="email" name="email" type="text" value="" size="30" aria-required="true" />
+                       </p>
+		       <p class="comment-form-rating">
+                           <label for="rating">Your Rating</label>
+                           <select name="rating" id="rating">
+                            <option value="">Rate&hellip;</option>
+                            <option value="5">Perfect</option>
+                            <option value="4">Good</option>
+                            <option value="3">Average</option>
+                            <option value="2">Not that bad</option>
+                            <option value="1">Very Poor</option>
+			   </select>
+                       </p>
+                       <p class="comment-form-comment">
+                           <label for="comment">Your Review</label>
+                           <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+                       </p>						
+		       <p class="form-submit">
+                           <input name="submit" type="submit" id="submit" class="submit" value="Submit" /> 
+                           <input type='hidden' name='comment_post_ID' value='304' id='comment_post_ID' />
+                           <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+                       </p>
+                     </form>
+                  </div><!-- #respond -->
                 </div>
-            <?php endif; ?>
-
-            <?php if ($_product->getShortDescription()):?>
-                <div class="short-description">
-                    <h2><?php echo $this->__('Quick Overview') ?></h2>
-                    <div class="std"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></div>
-                </div>
-            <?php endif;?>
-
-            <?php echo $this->getChildHtml('other');?>
-
-            <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-                <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
-            <?php endif;?>
-
+               </div>	
+                 <div class="clear"></div>
+                     
+             </div>                 
+         </div>             
         </div>
 
-        <div class="product-img-box">
-            <?php echo $this->getChildHtml('media') ?>
-        </div>
 
-        <div class="clearer"></div>
-        <?php if ($_product->isSaleable() && $this->hasOptions()):?>
-            <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
-        <?php endif;?>
-    </form>
-    <script type="text/javascript">
-    //<![CDATA[
-        var productAddToCartForm = new VarienForm('product_addtocart_form');
-        productAddToCartForm.submit = function(button, url) {
-            if (this.validator.validate()) {
-                var form = this.form;
-                var oldUrl = form.action;
+	<div class="related products">
 
-                if (url) {
-                   form.action = url;
-                }
-                var e = null;
-                try {
-                    this.form.submit();
-                } catch (e) {
-                }
-                this.form.action = oldUrl;
-                if (e) {
-                    throw e;
-                }
+		<h2>Related Products</h2>
 
-                if (button && button != 'undefined') {
-                    button.disabled = true;
-                }
-            }
-        }.bind(productAddToCartForm);
+		<ul class="products">
+			
+				<li class="first post-296 product type-product status-publish has-post-thumbnail product_cat-clothing product_cat-t-shirts sale shipping-taxable purchasable product-type-simple product-cat-clothing product-cat-t-shirts instock">
 
-        productAddToCartForm.submitLight = function(button, url){
-            if(this.validator) {
-                var nv = Validation.methods;
-                delete Validation.methods['required-entry'];
-                delete Validation.methods['validate-one-required'];
-                delete Validation.methods['validate-one-required-by-name'];
-                // Remove custom datetime validators
-                for (var methodName in Validation.methods) {
-                    if (methodName.match(/^validate-datetime-.*/i)) {
-                        delete Validation.methods[methodName];
-                    }
-                }
+	
+	<a href="http://inspirythemesdemo.com/medicalpress/product/woo-logo/">
 
-                if (this.validator.validate()) {
-                    if (url) {
-                        this.form.action = url;
-                    }
-                    this.form.submit();
-                }
-                Object.extend(Validation.methods, nv);
-            }
-        }.bind(productAddToCartForm);
-    //]]>
-    </script>
-    </div>
+		
+	<span class="onsale">Sale!</span>
+<img width="300" height="300" src="http://inspirythemesdemo.com/medicalpress/wp-content/uploads/2013/06/T_1_front-300x300.jpg" class="attachment-shop_catalog wp-post-image" alt="T_1_front" />
+		<h3>Woo Logo</h3>
 
-    <div class="product-collateral">
-<?php foreach ($this->getChildGroup('detailed_info', 'getChildHtml') as $alias => $html):?>
-        <div class="box-collateral <?php echo "box-{$alias}"?>">
-            <?php if ($title = $this->getChildData($alias, 'title')):?>
-            <h2><?php echo $this->escapeHtml($title); ?></h2>
-            <?php endif;?>
-            <?php echo $html; ?>
-        </div>
-<?php endforeach;?>
-        <?php echo $this->getChildHtml('upsell_products') ?>
-        <?php echo $this->getChildHtml('product_additional_data') ?>
-    </div>
+		
+	<div class="star-rating" title="Rated 4.00 out of 5"><span style="width:80%"><strong class="rating">4.00</strong> out of 5</span></div>
+	<span class="price"><del><span class="amount">&pound;20.00</span></del> <ins><span class="amount">&pound;18.00</span></ins></span>
+
+	</a>
+
+	<a href="/medicalpress/product/patient-ninja/?add-to-cart=296" rel="nofollow" data-product_id="296" data-product_sku="" data-quantity="1" class="button add_to_cart_button product_type_simple">Add to cart</a>
+</li>
+
+			
+				<li class="post-297 product type-product status-publish has-post-thumbnail product_cat-clothing product_cat-t-shirts shipping-taxable purchasable product-type-simple product-cat-clothing product-cat-t-shirts instock">
+
+	
+	<a href="http://inspirythemesdemo.com/medicalpress/product/premium-quality/">
+
+		<img width="300" height="300" src="http://inspirythemesdemo.com/medicalpress/wp-content/uploads/2013/06/T_2_front-300x300.jpg" class="attachment-shop_catalog wp-post-image" alt="T_2_front" />
+		<h3>Premium Quality</h3>
+
+		
+	<div class="star-rating" title="Rated 4.50 out of 5"><span style="width:90%"><strong class="rating">4.50</strong> out of 5</span></div>
+	<span class="price"><span class="amount">&pound;20.00</span></span>
+
+	</a>
+
+	<a href="/medicalpress/product/patient-ninja/?add-to-cart=297" rel="nofollow" data-product_id="297" data-product_sku="" data-quantity="1" class="button add_to_cart_button product_type_simple">Add to cart</a>
+</li>
+
+			
+		</ul>
+	</div>
+          </div><!-- #product-304 -->
+        </div><!-- /.blog-page-single -->
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+
 </div>

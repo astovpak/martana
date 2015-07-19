@@ -68,22 +68,49 @@
             <div class="isotope-item advanced-technology free-facilities col-lg-3 col-md-4 col-sm-6 ">
                 <article class="common clearfix hentry four-col-gallery">
                     <figure class="overlay-effect">
-                        <img width="270" height="201" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(135); ?>" class="attachment-gallery-post-single wp-post-image" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />                                        
-                       <div class="overlay" ><i class="top"></i> <i class="bottom"></i><?php echo $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?></div>
+                        <img width="270" height="201" src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image'); ?>" class="attachment-gallery-post-single wp-post-image" alt="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" />                                        
+                        <div class="overlay woocommerce" >
+                            <i class="top"></i> 
+                            <i class="bottom"></i>
+                           <div class="gallery-item-types product-overlay-info">
+                               <div class="stars"
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                                <i class="fa fa-star-o"></i>
+                               </div>
+                               <div class="price-div <?php if(!$_product->isSaleable()): ?> notsaleable <?php endif; ?>">
+                                <?php echo $this->getPriceHtml($_product, true) ?>
+                            </div>
+                           
+                                <?php if($_product->isSaleable()): ?>
+                                  <p><a class="order-now" href="#">Заказать сейчас</a></p>
+                                <?php else: ?>
+                                  <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                                <?php endif; ?>
+                            
+                           </div>
+                        </div>
                     </figure>
                     <div class="content clearfix">
                         <h4><a href="<?php echo $_product->getProductUrl() ?>" ><span class="name"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></span></a></h4>
 
-                        <div class="gallery-item-types">
-                            <div class="price">
+                        
+                            <div class="price-div <?php if(!$_product->isSaleable()): ?> notsaleable <?php endif; ?>">
                             <?php echo $this->getPriceHtml($_product, true) ?>
+                                <span class="hiddenprice">
+                                  <?php echo number_format($_product->getFinalPrice(),2) ?>
+                                </span>
                             </div>
                             <?php if($_product->isSaleable()): ?>
-                            <p><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button></p>
-                            <?php else: ?>
-                            <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
-                            <?php endif; ?>
-                        </div>
+                                  <p><a  title="<?php echo $this->__('Add to Cart') ?>" class="read-more" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></a></p>
+                                <?php else: ?>
+                                  <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                                <?php endif; ?>
+                        
+                            
+                        
                     </div>
                 </article>
              </div> 
@@ -103,3 +130,4 @@
 <?php endif; ?>
 
 </div>
+<a href="#top" id="scroll-top"></a>

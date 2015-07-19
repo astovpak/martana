@@ -31,19 +31,21 @@
  * @see Mage_Catalog_Block_Product_List_Toolbar
  */
 ?>
-<div class="limiter">
-            <label><?php echo $this->__('Show') ?></label>
-            <select onchange="setLocation(this.value)">
-            <?php foreach ($this->getAvailableLimit() as  $_key=>$_limit): ?>
-                <option value="<?php echo $this->getLimitUrl($_key) ?>"<?php if($this->isLimitCurrent($_key)): ?> selected="selected"<?php endif ?>>
-                    <?php echo $_limit ?>
-                </option>
-            <?php endforeach; ?>
-            </select> <?php echo $this->__('per page') ?>
-        </div>
-<div id="sorts" class="col-lg-12 col-md-12 col-sm-12">
+
+<div  class="col-lg-12 col-md-12 col-sm-12">
+    <ul id="sort-by"><h4>Сортировать:</h4>
+      <li class="active"><a href="#hiddenprice" sort-order="false">По ценe   </a></li>  
+      <li ><a href="#name" sort-order="false" >По названию   </a></li>
+      <li><a href="#" >По рейтингу</a></li>
+      <li><a href="#" >Kids Care</a></li>
+      
+    </ul>
+    </div>
+    
+
+<!--<div  class="col-lg-12 col-md-12 col-sm-12">
      
-    <ul id="sort-by">
+    <ul >
           <li><a href="#name">name</a></li>
           <li><a href="#price">price</a></li>
           <li><a href="#number">number</a></li>
@@ -51,4 +53,4 @@
           <li><a href="#category">category</a></li>
         
     </ul>
-</div>
+</div>-->
