@@ -116,6 +116,9 @@ article div.contents {
 .isotope-item h4{
     min-height: 38px;
 }
+.isotope-item img{
+    min-height: 201px;
+}
 .isotope-item div.content{
     height:150px;
     max-height: 150px;
@@ -184,6 +187,18 @@ div.price-div{
 }
 #sort-by li.active a {
   padding-bottom: 20px;
+}
+.product_meta i.fa-share{
+    font-size: 20px;
+    padding: 5px;
+}
+.related-image-container { position: relative;  }
+
+.related-checkbox{
+    position: absolute;
+    left:1px;
+    top:1px;
+  
 }
 }
 @media (min-width: 1300px) and (max-width: 1500px) {

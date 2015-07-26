@@ -29,6 +29,12 @@
  * Template for Mage_Page_Block_Html
  */
 ?>
+
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->getLang() ?>" lang="<?php echo $this->getLang() ?>">
 <head>
@@ -40,14 +46,32 @@
     <?php echo $this->getChildHtml('global_notices') ?>
     <div class="page">
         <?php echo $this->getChildHtml('header') ?>
-        <div class="main-container col2-right-layout">
+        <?php if(!$this->getIsHomePage()) : ?>
+         <div class="banner clearfix" style="background-repeat: no-repeat; background-position: center top; background-image: url('<?php echo $this->getSkinUrl('images/banner.jpg'); ?>'); background-size: cover;"></div>
+        <?php        endif; ?>
+        
+        
+        <div class="main-container col2-layout">
             <div class="main">
                 <?php echo $this->getChildHtml('breadcrumbs') ?>
                 <div class="col-main">
-                    <?php echo $this->getChildHtml('global_messages') ?>
-                    <?php echo $this->getChildHtml('content') ?>
+                  <div class="shop-page clearfix">
+                    <div class="container">
+                    <div class="row">      
+                         <div class="col-lg-9 col-md-8 col-sm-12">
+                            <?php echo $this->getChildHtml('global_messages') ?>
+                            <?php echo $this->getChildHtml('content') ?>
+                         </div>
+                        <div class="col-lg-3 col-md-4 col-sm-12 ">
+                            
+                            <?php echo $this->getChildHtml('right') ?>
+                        </div>
+                    </div>
+                    </div>
                 </div>
-                <div class="col-right sidebar"><?php echo $this->getChildHtml('right') ?></div>
+                
+                
+                
             </div>
         </div>
         <?php echo $this->getChildHtml('footer') ?>

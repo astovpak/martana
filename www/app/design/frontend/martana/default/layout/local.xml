@@ -49,10 +49,7 @@
             <type>skin_css</type>
             <name>css/custom-responsive.css</name>
         </action>
-        <action method="addItem">
-            <type>skin_css</type>
-            <name>css/custom.css</name>
-        </action>
+        
         <action method="addItem">
             <type>skin_css</type>
             <name>css/child-custom.css</name>
@@ -61,7 +58,10 @@
             <type>skin_css</type>
             <name>css/dynamic.css</name>
         </action>
-        
+        <action method="addItem">
+            <type>skin_css</type>
+            <name>css/custom.css</name>
+        </action>
         
         
        <!-- Add javasripts -->
@@ -151,7 +151,7 @@
             <action method="addBodyClass"><classname>single</classname></action>
             <action method="addBodyClass"><classname>single-product</classname></action>
             <action method="addBodyClass"><classname>inspiry-themes</classname></action>
-             <action method="addBodyClass"><classname>inspiry-medicalpress-theme</classname></action>
+            <action method="addBodyClass"><classname>inspiry-medicalpress-theme</classname></action>
      </reference> 
      
      <reference name="header">
@@ -159,6 +159,7 @@
         <action method="unsetChild"><name>store_language</name></action>
         
      </reference>
+     
      <reference name="footer">
          <block type="newsletter/subscribe" name="newsletter" template="newsletter/subscribe.phtml"/>
          <action method="unsetChild"><name>footer_links</name></action>
@@ -168,7 +169,33 @@
      <cms_index_index>
          <reference name="content">
             <remove name="page_content_heading"/>
+            
+         </reference>
+         <reference name="right">
+             <remove name="catalog.compare.sidebar" />
+             <remove name="right.permanent.callout" />          
+             <remove name="right.poll" />
+             <remove name="paypal.partner.right.logo" />
          </reference>
      </cms_index_index>
+
+     
+     
     </default>
+     <catalog_product_view>
+     <reference name="root">
+        <action method="setTemplate"><template>page/3columns.phtml</template></action>
+     </reference>
+     <reference name="content">
+       <block type="catalog/product_list_related" name="catalog.product.related" after="product.info" template="catalog/product/list/related.phtml"/>
+       
+           <reference name="product.info">
+               <block type="review/product_view_list" name="product.top.reviews" as="product.top.reviews" template="review/product/view/list.phtml">
+                    <block type="review/form" name="product.review.form" as="review_form" />
+                </block>
+           </reference>
+       
+        
+     </reference>
+     </catalog_product_view>
 </layout> 
