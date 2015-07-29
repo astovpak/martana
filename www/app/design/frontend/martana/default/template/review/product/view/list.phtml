@@ -25,6 +25,80 @@
  */
 ?>
 
+                  
+
+<?php $_items = $this->getReviewsCollection()->getItems();?>
+ <?php if (count($_items)):?>
+<?php echo $this->getChildHtml('toolbar') ?>
+  <ol class="commentlist">
+      <?php foreach ($_items as $_review):?>
+    <li itemprop="review"  class="comment even thread-even depth-1" id="li-comment-6521">
+      <div id="comment-6521" class="comment_container">
+          <img alt='' src='http://2.gravatar.com/avatar/babdd787a9577a0e615246ac79cf2826?s=60&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/babdd787a9577a0e615246ac79cf2826?s=120&amp;d=mm&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />
+          <div class="comment-text">
+            <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating" class="star-rating" title="Rated 4 out of 5">
+                <span style="width:80%"><strong itemprop="ratingValue">4</strong> out of 5</span>
+                <?php if (count($_votes)): ?>
+                <table class="ratings-table">
+                    <col width="1" />
+                    <col />
+                    <tbody>
+                        <?php foreach ($_votes as $_vote): ?>
+                        <tr>
+                            <th><?php echo $this->escapeHtml($_vote->getRatingCode()) ?></th>
+                            <td>
+                                <div class="rating-box">
+                                    <div class="rating" style="width:<?php echo $_vote->getPercent() ?>%;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+                <?php endif; ?>
+            </div>
+            <p class="meta">
+             
+              <strong itemprop="author"><?php echo $this->escapeHtml($_review->getNickname())?> </strong> &ndash; <time itemprop="datePublished" datetime="2013-06-07T11:46:52+00:00"><?php echo $this->formatDate($_review->getCreatedAt()); ?></time>:
+            </p>
+            <div itemprop="description" class="description">
+                <a href="<?php echo $this->getReviewUrl($_review->getId()) ?>"><?php echo $this->escapeHtml($_review->getTitle()) ?></a>
+                <p><?php echo nl2br($this->escapeHtml($_review->getDetail())) ?></p>
+            </div>
+           </div>
+      </div>
+    </li><!-- #comment-## -->
+     <?php    endforeach; ?>
+  </ol>
+<?php endif; ?>
+
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2014 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
 <?php $_items = $this->getReviewsCollection()->getItems();?>
 <div class="box-collateral box-reviews" id="customer-reviews">
     <?php if (count($_items)):?>
@@ -64,3 +138,5 @@
     <?php endif;?>
     <?php echo $this->getChildHtml('review_form') ?>
 </div>
+
+

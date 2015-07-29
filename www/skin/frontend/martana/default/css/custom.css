@@ -200,6 +200,11 @@ div.price-div{
     top:1px;
   
 }
+.rating{
+    float:left;
+    margin-right: 20px;
+    color:#67c9e0;
+}
 }
 @media (min-width: 1300px) and (max-width: 1500px) {
   .home-slider .content-wrapper h1 {

@@ -25,7 +25,24 @@
 (function($){
     "use strict";
     $(document).ready(function ($) {
-
+     /**
+      * rating star
+      */
+    
+     var rating=$('div.rating').html().split('.');
+     var r_html='';
+     for (var i=1; i<=parseInt(rating[0]);i++){
+     if (i>5){break;}
+     r_html+='<i class="fa fa-star"></i>';
+     }  
+     if(i<6){
+     if (rating[1]<6&&rating[1]>3){r_html+='<i class="fa fa-star-half-o"></i>';i++;}
+     if (rating[1]>=6){r_html+='<i class="fa fa-star"></i>';i++}     
+     for (var j=1;j<7-i;j++){
+       r_html+='<i class="fa fa-star-o"></i>';
+     } 
+ }
+     $('div.rating').html(r_html);
     /*-----------------------------------------------------------------*/
     /* General Targets
     /*-----------------------------------------------------------------*/
@@ -560,7 +577,7 @@
 
     }
 
-
+     
     /*----------------------------------------------------------------------------------*/
     /* Textarea Auto Size
     /*---------------------------------------------------------------------------------- */

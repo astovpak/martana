@@ -53,10 +53,11 @@
 	<div class="summary entry-summary entry-content">
           <h1 itemprop="name" class="product_title entry-title"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
 	  <div class="woocommerce-product-rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-            <div class="star-rating" title="Rated 4.67 out of 5">
-	      <span style="width:93.4%"><strong itemprop="ratingValue" class="rating">4.67</strong> out of <span itemprop="bestRating">5</span>				based on <span itemprop="ratingCount" class="rating">3</span> customer ratings			</span>
+            <div class="rating" >
+	      10
             </div>
-	    <a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<span itemprop="reviewCount" class="count">3</span> customer reviews)</a>	</div>
+	    <a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<span itemprop="reviewCount" class="count">3</span> customer reviews)</a>	
+          </div>
            <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 	     <p class="price"><span class="amount">
 	      <?php echo $this->getChildHtml('product_type_data') ?>
@@ -112,7 +113,7 @@
 	    <a href="#tab-instruction">Инструкция</a>
 	  </li>
  	  <li class="reviews_tab">
-              <a href="#tab-reviews">Комментарии (3)</a>
+              <a href="#tab-reviews"> <?php echo $this->getReviewsSummaryHtml($_product, 'count', true)?></a>
           </li>
          </ul>
          <div class="panel entry-content" id="tab-description">
@@ -140,30 +141,14 @@
             
          <div class="panel entry-content" id="tab-reviews">
              <div id="reviews">
+                 
 	       <div id="comments">
                   
 		<h2>3 reviews for Patient Ninja</h2>
                 <?php echo $this->getReviewsSummaryHtml($_product, 'default', true)?>
-               <?php echo $this->getChildHtml('product.top.reviews') ?>
-                  <ol class="commentlist">
-		    <li itemprop="review" itemscope itemtype="http://schema.org/Review" class="comment even thread-even depth-1" id="li-comment-6521">
-	              <div id="comment-6521" class="comment_container">
-                          <img alt='' src='http://2.gravatar.com/avatar/babdd787a9577a0e615246ac79cf2826?s=60&#038;d=mm&#038;r=g' srcset='http://2.gravatar.com/avatar/babdd787a9577a0e615246ac79cf2826?s=120&amp;d=mm&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />
-		          <div class="comment-text">
-                            <div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating" class="star-rating" title="Rated 4 out of 5">
-				<span style="width:80%"><strong itemprop="ratingValue">4</strong> out of 5</span>
-			    </div>
-                            <p class="meta">
-			      <strong itemprop="author">James Koster</strong> &ndash; <time itemprop="datePublished" datetime="2013-06-07T11:46:52+00:00">June 7, 2013</time>:
-			    </p>
-                            <div itemprop="description" class="description">
-                                <p>Perfect when you&#8217;re sat at your computer, waiting for the next batch of Woo Goodies to be released. The Patient Ninja is Patient.</p>
-                            </div>
-		           </div>
-	              </div>
-                    </li><!-- #comment-## -->
-
-		  </ol>
+              
+                <?php echo $this->getChildHtml('product.top.reviews') ?>
+                  
                </div>
                <div id="review_form_wrapper">
 		<div id="review_form">
@@ -199,7 +184,27 @@
                            <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
                        </p>
                      </form>
-                     <script type="text/javascript">
+                    
+                  </div><!-- #respond -->
+                </div>
+               </div>	
+               <div class="clear"></div>
+                     
+             </div>                 
+         </div>             
+        </div>
+
+
+	
+          </div><!-- #product-304 -->
+        </div><!-- /.blog-page-single -->
+<!--      </div>
+    
+   </div>  //.row 
+ </div>  //.container 
+
+</div>-->
+ <script type="text/javascript">
     //<![CDATA[
         var productAddToCartForm = new VarienForm('product_addtocart_form');
         productAddToCartForm.submit = function(button, url) {
@@ -250,22 +255,3 @@
         }.bind(productAddToCartForm);
     //]]>
     </script>
-                  </div><!-- #respond -->
-                </div>
-               </div>	
-                 <div class="clear"></div>
-                     
-             </div>                 
-         </div>             
-        </div>
-
-
-	
-          </div><!-- #product-304 -->
-        </div><!-- /.blog-page-single -->
-<!--      </div>
-    
-   </div>  //.row 
- </div>  //.container 
-
-</div>-->

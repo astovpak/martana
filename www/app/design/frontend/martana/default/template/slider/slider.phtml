@@ -72,8 +72,7 @@
      
     ?>
  <div class="flexslider">
-              
-            <ul class="slides">
+               <ul class="slides">
                 
                 <?php foreach ($collection as $item):  ?>
                  
@@ -83,9 +82,11 @@
                   <div class="content-wrapper clearfix">
                       <div class="container">
                          <div class="slide-content clearfix ">
-                            <h1><?php echo $item->getTitle()?></h1>
-                            <p><?php echo $item->getContent()?></p>
-                           <!-- <a class="btn" href="#"><?php //echo Mage::helper('slider')->__('Read more')?> </a>-->
+                          <h3><?php echo $item->getTitle()?></h3>                            
+                          <p><?php echo $item->getContent()?></p> 
+                            
+                            
+                           
                          </div>
                       </div>
                   </div>                     
